@@ -1,0 +1,33 @@
+<h1 style="text-align:center">
+    Ordbogen-test
+  </h1>
+  <div class="login">
+    <h2 class="login-header">Opret bruger</h2>
+    <form [formGroup]="authForm" class="login-container" (ngSubmit)="register()">
+      <p [ngClass]="{ 'has-error': isSubmitted && formControls.email.errors }">
+        <input type="email" placeholder="Email" formControlName="email">
+      </p>
+      <div *ngIf="isSubmitted && formControls.email.errors" class="help-block">
+        <div *ngIf="formControls.email.errors.required">Email is required</div>
+      </div>
+      <p [ngClass]="{ 'has-error': isSubmitted && formControls.password.errors }">
+        <input type="password" placeholder="Password" formControlName="password">
+      </p>
+      <div *ngIf="isSubmitted && formControls.password.errors" class="help-block">
+        <div *ngIf="formControls.password.errors.required">Password is required</div>
+      </div>
+      <p [ngClass]="{ 'has-error': isSubmitted && formControls.password.errors }">
+        <input type="text" placeholder="Firstname" formControlName="firstname">
+    </p>
+    <p [ngClass]="{ 'has-error': isSubmitted && formControls.password.errors }">
+        <input type="text" placeholder="Lastname" formControlName="lastname">
+    </p>
+      <p>
+        <input type="submit" value="Opret">
+        <a href="/login">Login</a> 
+      </p>
+      <p>
+        {{error}}
+      </p>
+    </form>
+  </div>

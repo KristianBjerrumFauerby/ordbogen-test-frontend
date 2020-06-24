@@ -1,0 +1,45 @@
+<div style="text-align:center">
+    <h1>
+      Velkommen {{firstname}}!
+    </h1>
+    <div>
+     
+        <table>   
+          <thead >  
+            <tr>  
+              <th scope="col">id</th>  
+              <th scope="col">Bruger</th>  
+              <th scope="col">Todo</th>  
+              <th scope="col" >Oprettet</th> 
+              <th scope="col" >Afsluttet</th>
+              <th scope="col" >Afslut</th>  
+            </tr>  
+          </thead>  
+          <tbody>  
+                  <tr *ngFor="let p of todos">   
+                    <td>{{p.id}}</td>   
+                    <td>{{p.user}}</td>   
+                    <td>{{p.todo}}</td>   
+                    <td>{{p.created_at}}</td>
+                    <td>{{p.finished_at}}</td>
+                    <td><button *ngIf="p.finished_at == 'notdone'" (click)="closeTodo(p.id)">afslut</button></td>   
+                    </tr>  
+                    <tr>  
+                  </tbody>  
+                </table>  
+     
+  </div>
+
+  
+  <form [formGroup]="authForm" class="login-container" (ngSubmit)="createTodo()">
+    <input type="text" placeholder="Todo" formControlName="todo">
+    <input type="submit" value="Opret">
+  </form>
+  
+    <p>
+      <button (click)="logout()">
+        Logout
+      </button>
+    </p>
+    
+  </div>

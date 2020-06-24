@@ -1,0 +1,30 @@
+button{
+    background: rgb(1, 29, 51);
+    border-color: transparent;
+    color: #fff;
+    cursor: pointer;
+}
+th, td {  
+    padding: 15px;  
+    text-align: left;  
+  }  
+  table, td, th {    
+    border: 1px solid #ddd;  
+    text-align: left; 
+     
+  }  
+   th {  
+    padding-top: 12px;  
+    padding-bottom: 12px;  
+    text-align: left;  
+    background-color: rgb(15, 66, 107);  
+    color: white;  
+  }  
+  table {  
+    border-collapse: collapse;  
+    width: 100%; 
+    
+      
+  }  
+  tr:hover {background-color: rgb(100, 123, 136);  
+} 
